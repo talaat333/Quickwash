@@ -4,7 +4,7 @@ import { PolicyArticle } from "@/components/legal/PolicyArticle";
 import { getPolicy } from "@/data/policies";
 
 export const metadata: Metadata = {
-  title: "Refund & Cancellation Policy | QuickWash",
+  title: "Cancellation, Refund & Service Guarantee Policy | QuickWash",
   description: "Cancellation rules, refunds, quality complaints, damage claims and outstanding balances.",
 };
 

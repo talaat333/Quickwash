@@ -27,12 +27,13 @@ export function PolicyArticle({ doc }: { doc: PolicyDoc }) {
     <section className="py-16 md:py-24">
       <Container>
         {/* English legal content reads LTR even though the site shell is RTL. */}
-        <article dir="ltr" className="mx-auto max-w-[820px] text-left">
-          <header className="border-b border-border pb-8">
-            <div dir="rtl" className="text-right">
-              <h1 className="text-h1 text-text-primary">{doc.titleAr}</h1>
-            </div>
-            <p className="mt-3 text-h4 font-semibold text-text-secondary">{doc.titleEn}</p>
+        <article dir="ltr" className="mx-auto max-w-[860px] text-left">
+          <Link href="/" className="text-body-sm text-brand-primary hover:underline">
+            ← Back to home
+          </Link>
+
+          <header className="mt-6 border-b border-border pb-8">
+            <h1 className="text-h1 text-text-primary">{doc.titleEn}</h1>
             <p className="mt-3 text-body text-text-secondary">{doc.subtitleEn}</p>
 
             <dl className="mt-6 space-y-1 text-body-sm text-text-muted">
@@ -43,20 +44,6 @@ export function PolicyArticle({ doc }: { doc: PolicyDoc }) {
                 <a href={`mailto:${doc.contact}`} className="text-brand-primary hover:underline">{doc.contact}</a>
               </div>
             </dl>
-
-            <div dir="rtl" className="mt-6 rounded-lg border border-border bg-surface-muted p-4 text-right text-body-sm">
-              <p className="text-text-secondary">
-                النسخة الرسمية الكاملة (بالعربية والإنجليزية) متاحة للتحميل بصيغة PDF.
-              </p>
-              <a
-                href={doc.pdf}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-2 inline-flex items-center gap-2 font-medium text-brand-primary hover:underline"
-              >
-                تحميل ملف السياسة (PDF)
-              </a>
-            </div>
           </header>
 
           {headings.length > 3 && (
@@ -85,7 +72,7 @@ export function PolicyArticle({ doc }: { doc: PolicyDoc }) {
               }
               if (b.type === "ul") {
                 return (
-                  <ul key={i} className="list-disc space-y-2 ps-6">
+                  <ul key={i} className="list-disc space-y-2 ps-6 marker:text-brand-secondary">
                     {b.items.map((it, j) => <li key={j}>{it}</li>)}
                   </ul>
                 );
@@ -94,8 +81,8 @@ export function PolicyArticle({ doc }: { doc: PolicyDoc }) {
             })}
           </div>
 
-          <div dir="rtl" className="mt-12 border-t border-border pt-6 text-right text-body-sm text-text-muted">
-            <Link href="/" className="text-brand-primary hover:underline">← العودة إلى الصفحة الرئيسية</Link>
+          <div className="mt-12 border-t border-border pt-6 text-body-sm text-text-muted">
+            <Link href="/" className="text-brand-primary hover:underline">← Back to home</Link>
           </div>
         </article>
       </Container>

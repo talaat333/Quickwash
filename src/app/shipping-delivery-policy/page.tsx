@@ -4,7 +4,7 @@ import { PolicyArticle } from "@/components/legal/PolicyArticle";
 import { getPolicy } from "@/data/policies";
 
 export const metadata: Metadata = {
-  title: "Shipping & Delivery Policy | QuickWash",
+  title: "Shipping, Contract Delivery & Service Fulfillment Policy | QuickWash",
   description: "How Quick Wash delivers subscription contracts and fulfils on-location car-wash bookings.",
 };
 
