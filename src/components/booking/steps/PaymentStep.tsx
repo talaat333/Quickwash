@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useFormContext } from "react-hook-form";
 import type { BookingFormData } from "@/features/bookings/types/form";
 import type { Service } from "@/types/domain";
@@ -70,6 +71,18 @@ export function PaymentStep({ service }: { service?: Service }) {
           </span>
         </div>
       )}
+
+      <p className="mt-6 text-caption leading-relaxed text-text-muted">
+        بتأكيد الحجز، فإنك تُقرّ بموافقتك على{" "}
+        <Link href="/refund-cancellation-policy" className="text-brand-primary underline hover:no-underline">
+          سياسة الإلغاء والاسترداد
+        </Link>{" "}
+        و
+        <Link href="/privacy-policy" className="text-brand-primary underline hover:no-underline">
+          سياسة الخصوصية
+        </Link>
+        .
+      </p>
     </div>
   );
 }

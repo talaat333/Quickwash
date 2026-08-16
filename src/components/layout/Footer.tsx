@@ -14,7 +14,7 @@ export function Footer() {
   return (
     <footer className="bg-ink text-text-on-ink">
       <div className="mx-auto max-w-content px-6 py-16 lg:px-8">
-        <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
+        <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div className="max-w-sm">
             <Logo onDark />
             <p className="mt-5 text-body-sm leading-loose text-text-on-ink/70">
@@ -29,6 +29,19 @@ export function Footer() {
                 {item.label}
               </Link>
             ))}
+          </nav>
+
+          <nav aria-label="قانوني" className="flex flex-col gap-3">
+            <h3 className="mb-1 text-label uppercase tracking-widest text-text-on-ink/50">قانوني</h3>
+            <Link href="/privacy-policy" className="text-body-sm text-text-on-ink/80 transition-colors hover:text-brand-secondary">
+              سياسة الخصوصية
+            </Link>
+            <Link href="/refund-cancellation-policy" className="text-body-sm text-text-on-ink/80 transition-colors hover:text-brand-secondary">
+              سياسة الإلغاء والاسترداد
+            </Link>
+            <Link href="/shipping-delivery-policy" className="text-body-sm text-text-on-ink/80 transition-colors hover:text-brand-secondary">
+              سياسة التوصيل والتسليم
+            </Link>
           </nav>
 
           <div className="flex flex-col gap-3">
@@ -51,9 +64,10 @@ export function Footer() {
 
         <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-6 text-caption text-text-on-ink/60 md:flex-row md:items-center">
           <p>© {new Date().getFullYear()} {siteConfig.name}. جميع الحقوق محفوظة.</p>
-          <div className="flex gap-6">
-            <Link href="#" className="transition-colors hover:text-brand-secondary">سياسة الخصوصية</Link>
-            <Link href="#" className="transition-colors hover:text-brand-secondary">الشروط والأحكام</Link>
+          <div className="flex flex-wrap gap-6">
+            <Link href="/privacy-policy" className="transition-colors hover:text-brand-secondary">سياسة الخصوصية</Link>
+            <Link href="/refund-cancellation-policy" className="transition-colors hover:text-brand-secondary">الإلغاء والاسترداد</Link>
+            <Link href="/shipping-delivery-policy" className="transition-colors hover:text-brand-secondary">التوصيل والتسليم</Link>
           </div>
         </div>
       </div>
